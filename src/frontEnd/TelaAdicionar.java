@@ -67,6 +67,7 @@ public class TelaAdicionar extends javax.swing.JFrame {
         fundoAdicionar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Adicionar Nota");
         setMaximumSize(new java.awt.Dimension(0, 0));
         setResizable(false);
 
