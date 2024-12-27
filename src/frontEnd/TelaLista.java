@@ -74,16 +74,16 @@ public class TelaLista extends javax.swing.JFrame {
         jLabel1.setText("Listagem das notas");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, -1, -1));
 
-        jTable1.setBackground(new java.awt.Color(255, 255, 0));
+        jTable1.setBackground(new java.awt.Color(38, 92, 74));
         jTable1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 102, 0)));
         jTable1.setFont(new java.awt.Font("Bell MT", 1, 18)); // NOI18N
-        jTable1.setForeground(new java.awt.Color(38, 92, 74));
+        jTable1.setForeground(new java.awt.Color(255, 255, 255));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Id", "Título", "Desc"
+                "Id", "Título", "Descrição"
             }
         ) {
             Class[] types = new Class [] {
@@ -102,6 +102,7 @@ public class TelaLista extends javax.swing.JFrame {
             }
         });
         jTable1.setToolTipText("");
+        jTable1.setGridColor(new java.awt.Color(0, 0, 0));
         jTable1.setRowHeight(30);
         jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
