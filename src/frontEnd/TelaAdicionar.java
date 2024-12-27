@@ -55,6 +55,8 @@ public class TelaAdicionar extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         tituloTxt = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -76,8 +78,17 @@ public class TelaAdicionar extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Black Ryder Demo", 1, 24)); // NOI18N
-        jLabel1.setText("Bloco de notas");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, -1, -1));
+        jLabel1.setText(" de notas");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("Black Ryder Demo", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Bloco de notas");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Black Ryder Demo", 1, 24)); // NOI18N
+        jLabel5.setText("Bloco de notas");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, -1, -1));
 
         tituloTxt.setBackground(new java.awt.Color(38, 92, 74));
         tituloTxt.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -86,8 +97,8 @@ public class TelaAdicionar extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Black Ryder Demo", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Descrição");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, -1, -1));
+        jLabel2.setText("Descrição:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
 
         descTxt.setBackground(new java.awt.Color(38, 92, 74));
         descTxt.setColumns(20);
@@ -103,12 +114,14 @@ public class TelaAdicionar extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Black Ryder Demo", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Título: ");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
 
         jToggleButton1.setBackground(new java.awt.Color(38, 92, 74));
         jToggleButton1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jToggleButton1.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButton1.setText("Guardar Nota");
+        jToggleButton1.setAlignmentX(10.0F);
+        jToggleButton1.setAlignmentY(50.0F);
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jToggleButton1ActionPerformed(evt);
@@ -207,6 +220,8 @@ public class TelaAdicionar extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JToggleButton jToggleButton1;
