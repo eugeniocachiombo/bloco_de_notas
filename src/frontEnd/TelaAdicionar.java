@@ -1,7 +1,6 @@
 package frontEnd;
 
 import classes.Nota;
-import conexao.Conexao;
 import dao.NotaDao;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -95,6 +94,7 @@ public class TelaAdicionar extends javax.swing.JFrame {
         jToggleButton1.setText("Guardar Nota");
         jToggleButton1.setAlignmentX(10.0F);
         jToggleButton1.setAlignmentY(50.0F);
+        jToggleButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jToggleButton1ActionPerformed(evt);
@@ -102,15 +102,16 @@ public class TelaAdicionar extends javax.swing.JFrame {
         });
         jPanel1.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 450, 327, 42));
 
-        jToggleButton2.setBackground(new java.awt.Color(38, 92, 74));
+        jToggleButton2.setBackground(new java.awt.Color(51, 51, 51));
         jToggleButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton2.setText("Lista");
+        jToggleButton2.setText("Listar");
+        jToggleButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jToggleButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jToggleButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 80, -1, -1));
+        jPanel1.add(jToggleButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 80, 90, -1));
 
         fundoAdicionar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/1.jpg"))); // NOI18N
         jPanel1.add(fundoAdicionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -190,7 +191,7 @@ public class TelaAdicionar extends javax.swing.JFrame {
 
             public void abrirDesigner() {
                 try {
-                    UIManager.setLookAndFeel("com.jtattoo.plaf.smart.SmartLookAndFeel");
+                    UIManager.setLookAndFeel("com.jtattoo.plaf.acryl.AcrylLookAndFeel");
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
