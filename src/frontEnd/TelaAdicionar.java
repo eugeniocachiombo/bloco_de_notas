@@ -19,31 +19,14 @@ import java.util.Objects;
 public class TelaAdicionar extends javax.swing.JFrame {
 
     static NotaDao notaDao = new NotaDao();
-   static ArrayList<Nota> lista = notaDao.listar();
+    static ArrayList<Nota> lista = notaDao.listar();
 
     public TelaAdicionar() {
         initComponents();
-        this.listarDados();
-        NotaDao notaDao = new NotaDao();
-        notaDao.listarTeste();
     }
-    
-    void listarDados(){
-        System.out.println("-----------------");
-        System.out.println("Lista de notas");
-        System.out.println("-----------------");
-        for (Nota nota : lista) {
-            System.out.println("[" + nota.getId() + ", " + nota.getTitulo() + ", " + nota.getDesc() + " ]");
-        }
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-    }
-    
-    void limparCampos(){
-         tituloTxt.setText("");
+
+    void limparCampos() {
+        tituloTxt.setText("");
         descTxt.setText("");
     }
 
@@ -167,13 +150,12 @@ public class TelaAdicionar extends javax.swing.JFrame {
         int id = lista.size() + 1;
         String titulo = tituloTxt.getText();
         String desc = descTxt.getText();
-        
+
         Nota nota = new Nota();
         nota.setId(id);
         nota.setTitulo(titulo);
         nota.setDesc(desc);
         notaDao.adicionar(nota);
-        this.listarDados();
         this.limparCampos();
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 

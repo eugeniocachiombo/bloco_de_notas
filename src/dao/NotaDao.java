@@ -40,21 +40,21 @@ public class NotaDao implements NotaInterface {
 
     @Override
     public ArrayList<Nota> listar() {
-        //throw new UnsupportedOperationException("Not supported yet."); 
-
-        return listaNotas;
-    }
-
-    public void listarTeste() {
         try {
             String sql = "select * from nota";
             PreparedStatement stmt = con.prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();
             while(rs.next()){
-                System.out.println("Nota: " + rs.getString("titulo"));
+                Nota nota = new Nota();
+                nota.setId(rs.getInt("id"));
+                nota.setTitulo(rs.getString("titulo"));
+                nota.setDesc(rs.getString("descricao"));
+                listaNotas.add(nota);
             }
+            return listaNotas;
         } catch (Exception e) {
             System.out.println("Erro: " + e.getMessage());
+            return null;
         }
     }
 }
