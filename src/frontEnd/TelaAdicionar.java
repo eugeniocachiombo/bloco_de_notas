@@ -6,6 +6,7 @@
 package frontEnd;
 
 import classes.Nota;
+import conexao.Conexao;
 import dao.NotaDao;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -23,6 +24,8 @@ public class TelaAdicionar extends javax.swing.JFrame {
     public TelaAdicionar() {
         initComponents();
         this.listarDados();
+        NotaDao notaDao = new NotaDao();
+        notaDao.listarTeste();
     }
     
     void listarDados(){
