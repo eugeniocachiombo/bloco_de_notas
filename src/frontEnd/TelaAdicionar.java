@@ -65,27 +65,31 @@ public class TelaAdicionar extends javax.swing.JFrame {
         fundoAdicionar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(0, 0));
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(17, 13, 13));
+        jPanel1.setMaximumSize(new java.awt.Dimension(0, 0));
+        jPanel1.setMinimumSize(new java.awt.Dimension(0, 0));
+        jPanel1.setPreferredSize(new java.awt.Dimension(0, 0));
+        jPanel1.setRequestFocusEnabled(false);
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Black Ryder Demo", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Bloco de notas");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(112, 18, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, -1, -1));
 
-        tituloTxt.setBackground(new java.awt.Color(51, 51, 51));
+        tituloTxt.setBackground(new java.awt.Color(38, 92, 74));
         tituloTxt.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         tituloTxt.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(tituloTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 102, 327, 40));
+        jPanel1.add(tituloTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 327, 40));
 
         jLabel2.setFont(new java.awt.Font("Black Ryder Demo", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Descrição");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 153, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, -1, -1));
 
-        descTxt.setBackground(new java.awt.Color(51, 51, 51));
+        descTxt.setBackground(new java.awt.Color(38, 92, 74));
         descTxt.setColumns(20);
         descTxt.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
         descTxt.setForeground(new java.awt.Color(255, 255, 255));
@@ -94,12 +98,12 @@ public class TelaAdicionar extends javax.swing.JFrame {
         descTxt.setWrapStyleWord(true);
         jScrollPane1.setViewportView(descTxt);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 202, 327, 215));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 220, 327, 215));
 
         jLabel3.setFont(new java.awt.Font("Black Ryder Demo", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Título: ");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
 
         jToggleButton1.setBackground(new java.awt.Color(38, 92, 74));
         jToggleButton1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -110,7 +114,7 @@ public class TelaAdicionar extends javax.swing.JFrame {
                 jToggleButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 428, 327, 42));
+        jPanel1.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 450, 327, 42));
 
         jToggleButton2.setBackground(new java.awt.Color(38, 92, 74));
         jToggleButton2.setForeground(new java.awt.Color(255, 255, 255));
@@ -120,20 +124,22 @@ public class TelaAdicionar extends javax.swing.JFrame {
                 jToggleButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jToggleButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(302, 60, -1, -1));
+        jPanel1.add(jToggleButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 80, -1, -1));
 
-        fundoAdicionar.setText("fundoAdicionar");
-        jPanel1.add(fundoAdicionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 600, 490));
+        fundoAdicionar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/1.jpg"))); // NOI18N
+        jPanel1.add(fundoAdicionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 517, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0))
         );
 
         pack();
