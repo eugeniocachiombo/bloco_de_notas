@@ -12,7 +12,6 @@ public class NotaDao implements NotaInterface {
 
     public Connection con;
     public Conexao conexao;
-    ArrayList<Nota> listaNotas = new ArrayList<>();
 
     public NotaDao() {
         conexao = new Conexao();
@@ -20,22 +19,30 @@ public class NotaDao implements NotaInterface {
     }
 
     @Override
-    public void adicionar(Nota nota) {
-      //  throw new UnsupportedOperationException("Not supported yet.");
-
-        listaNotas.add(nota);
+    public boolean adicionar(Nota nota) {
+        try {
+            String sql = "insert into nota (titulo, descricao) values(?, ?)";
+            PreparedStatement stmt = con.prepareStatement(sql);
+            stmt.setString(1, nota.getTitulo());
+            stmt.setString(2, nota.getDesc());
+            stmt.execute();
+            return true;
+        } catch (Exception e) {
+            System.out.println("Erro: " + e.getMessage());
+            return false;
+        }
     }
 
     @Override
-    public void actualizar(Nota nota) {
-        //throw new UnsupportedOperationException("Not supported yet.");
-        listaNotas.set(nota.getId(), nota);
+    public boolean actualizar(Nota nota) {
+        return false;
     }
 
     @Override
-    public void eliminar(int id) {
+    public boolean eliminar(int id) {
         // throw new UnsupportedOperationException("Not supported yet."); 
-        listaNotas.remove(id - 1);
+        //listaNotas.remove(id - 1);
+        return false;
     }
 
     @Override
@@ -44,7 +51,9 @@ public class NotaDao implements NotaInterface {
             String sql = "select * from nota";
             PreparedStatement stmt = con.prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();
-            while(rs.next()){
+            ArrayList<Nota> listaNotas = new ArrayList<>();
+
+            while (rs.next()) {
                 Nota nota = new Nota();
                 nota.setId(rs.getInt("id"));
                 nota.setTitulo(rs.getString("titulo"));

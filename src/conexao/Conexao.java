@@ -7,8 +7,8 @@ import java.sql.DriverManager;
 public class Conexao {
     public Connection getConexao() {
         try {
-            String caminho = "jdbc:sqlite:src/conexao/conexao.db";
-            Connection con = DriverManager.getConnection(caminho);
+            String host = "jdbc:sqlite:src/conexao/conexao.db";
+            Connection con = DriverManager.getConnection(host);
             return con;
         } catch (Exception e) {
             System.out.println("Erro de conexão: " + e.getMessage());
