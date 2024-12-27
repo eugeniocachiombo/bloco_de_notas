@@ -5,6 +5,7 @@ import conexao.Conexao;
 import dao.NotaDao;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.UIManager;
 
 public class TelaAdicionar extends javax.swing.JFrame {
 
@@ -183,7 +184,16 @@ public class TelaAdicionar extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+                this.abrirDesigner();
                 new TelaAdicionar().setVisible(true);
+            }
+
+            public void abrirDesigner() {
+                try {
+                    UIManager.setLookAndFeel("com.jtattoo.plaf.smart.SmartLookAndFeel");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
     }

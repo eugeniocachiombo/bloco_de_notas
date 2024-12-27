@@ -2,33 +2,20 @@ package frontEnd;
 
 import classes.Nota;
 import static frontEnd.TelaAdicionar.lista;
-import java.util.Arrays;
-import java.util.Objects;
-import javax.swing.JOptionPane;
+import java.awt.Color;
+import java.awt.Font;
+import javax.swing.BorderFactory;
+import javax.swing.UIManager;
 import javax.swing.table.DefaultTableModel;
 
 public class TelaLista extends javax.swing.JFrame {
 
-    /*NotaDao notaDao = new NotaDao();
-     ArrayList<String[]> lista = notaDao.listar();*/
     public TelaLista() {
         initComponents();
         this.listarDados();
     }
-
+    
     void listarDados() {
-       /* System.out.println("-----------------");
-        System.out.println("Lista de notas");
-        System.out.println("-----------------");
-        for (String[] info : lista) {
-            System.out.println(Arrays.toString(info));
-        }
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");*/
-
         DefaultTableModel tabela = (DefaultTableModel) jTable1.getModel();
 
         for (Nota nota : lista) {
@@ -37,7 +24,7 @@ public class TelaLista extends javax.swing.JFrame {
                 nota.getTitulo(),
                 nota.getDesc()
             };
-            tabela.addRow( dados);
+            tabela.addRow(dados);
         }
 
     }
@@ -55,6 +42,7 @@ public class TelaLista extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Listagem");
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(17, 13, 13));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -67,7 +55,7 @@ public class TelaLista extends javax.swing.JFrame {
                 jToggleButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jToggleButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, -1, -1));
+        jPanel1.add(jToggleButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 20, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Black Ryder Demo", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -168,6 +156,7 @@ public class TelaLista extends javax.swing.JFrame {
                     break;
                 }
             }
+            
         } catch (ClassNotFoundException ex) {
             java.util.logging.Logger.getLogger(TelaLista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
@@ -180,12 +169,13 @@ public class TelaLista extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
 
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new TelaLista().setVisible(true);
             }
+
         });
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
