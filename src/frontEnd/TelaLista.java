@@ -1,7 +1,8 @@
 package frontEnd;
 
 import classes.Nota;
-import static frontEnd.TelaAdicionar.lista;
+import dao.NotaDao;
+import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 
 public class TelaLista extends javax.swing.JFrame  {
@@ -12,10 +13,14 @@ public class TelaLista extends javax.swing.JFrame  {
     }
 
     void listarDados() {
+        ArrayList<Nota> listaNotas = new ArrayList<>();
+        NotaDao notaDao = new NotaDao();
+        listaNotas = notaDao.listar();
+        
         DefaultTableModel tabela = (DefaultTableModel) jTable1.getModel();
         tabela.setRowCount(0);
         
-        for (Nota nota : lista) {
+        for (Nota nota : listaNotas) {
             Object[] dados = {
                 nota.getId(),
                 nota.getTitulo(),
@@ -30,7 +35,6 @@ public class TelaLista extends javax.swing.JFrame  {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jToggleButton3 = new javax.swing.JToggleButton();
         jToggleButton2 = new javax.swing.JToggleButton();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -43,17 +47,6 @@ public class TelaLista extends javax.swing.JFrame  {
 
         jPanel1.setBackground(new java.awt.Color(17, 13, 13));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jToggleButton3.setBackground(new java.awt.Color(38, 92, 74));
-        jToggleButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton3.setText("Actualizar");
-        jToggleButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton3ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jToggleButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 100, -1));
 
         jToggleButton2.setBackground(new java.awt.Color(51, 51, 51));
         jToggleButton2.setForeground(new java.awt.Color(255, 255, 255));
@@ -150,21 +143,10 @@ public class TelaLista extends javax.swing.JFrame  {
 
     }//GEN-LAST:event_jTable1MouseClicked
 
-    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
-        this.listarDados();
-    }//GEN-LAST:event_jToggleButton3ActionPerformed
-
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        for (int i = 0; i < 10; i++) {
-            try {
-                java.lang.Thread.sleep(5000);
-            } catch (Exception e) {
-                System.out.println("Erro: " + e.getMessage());
-            }
-        }
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -206,7 +188,6 @@ public class TelaLista extends javax.swing.JFrame  {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JToggleButton jToggleButton3;
     // End of variables declaration//GEN-END:variables
 }
 

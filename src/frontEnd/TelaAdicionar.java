@@ -8,8 +8,7 @@ import javax.swing.UIManager;
 
 public class TelaAdicionar extends javax.swing.JFrame {
 
-    static NotaDao notaDao = new NotaDao();
-    static ArrayList<Nota> lista = notaDao.listar();
+    NotaDao notaDao = new NotaDao();
 
     public TelaAdicionar() {
         initComponents();
