@@ -166,6 +166,9 @@ public class TelaActualizar extends javax.swing.JFrame {
         if (executado) {
             JOptionPane.showMessageDialog(null, "Nota Actualizada");
             this.limparCampos();
+            TelaLista tLista = new TelaLista();
+            tLista.setVisible(true);
+            this.dispose();
         } else {
             JOptionPane.showMessageDialog(null, "Erro ao actualizar");
         }
@@ -178,7 +181,21 @@ public class TelaActualizar extends javax.swing.JFrame {
     }//GEN-LAST:event_jToggleButton2ActionPerformed
 
     private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
-        // TODO add your handling code here:
+      
+        boolean executado;
+        int idNota = idNotaSelecionada; // Variavel estatica
+        NotaDao notaDao = new NotaDao();
+        executado = notaDao.eliminar(idNota);
+
+        if (executado) {
+            JOptionPane.showMessageDialog(null, "Nota Eliminada");
+            this.limparCampos();
+            TelaLista tLista = new TelaLista();
+            tLista.setVisible(true);
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(null, "Erro ao eliminar");
+        }
     }//GEN-LAST:event_jToggleButton3ActionPerformed
 
     /**

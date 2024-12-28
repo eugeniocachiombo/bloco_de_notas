@@ -35,14 +35,32 @@ public class NotaDao implements NotaInterface {
 
     @Override
     public boolean actualizar(Nota nota) {
-        return false;
+        try {
+            String sql = "UPDATE nota SET titulo=?, descricao=? WHERE id=?";
+            PreparedStatement stmt = con.prepareStatement(sql);
+            stmt.setString(1, nota.getTitulo());
+            stmt.setString(2, nota.getDesc());
+            stmt.setInt(3, nota.getId());
+            stmt.execute();
+            return true;
+        } catch (Exception e) {
+            System.out.println("Erro: " + e.getMessage());
+            return false;
+        }
     }
 
     @Override
     public boolean eliminar(int id) {
-        // throw new UnsupportedOperationException("Not supported yet."); 
-        //listaNotas.remove(id - 1);
-        return false;
+        try {
+            String sql = "delete from nota where id=?";
+            PreparedStatement stmt = con.prepareStatement(sql);
+            stmt.setInt(1, id);
+            stmt.execute();
+            return true;
+        } catch (Exception e) {
+            System.out.println("Erro: " + e.getMessage());
+            return false;
+        }
     }
 
     @Override
@@ -79,7 +97,7 @@ public class NotaDao implements NotaInterface {
             nota.setId(rs.getInt("id"));
             nota.setTitulo(rs.getString("titulo"));
             nota.setDesc(rs.getString("descricao"));
-
+            con.close();
             return nota;
         } catch (Exception e) {
             System.out.println("Erro: " + e.getMessage());
