@@ -11,35 +11,30 @@ import static frontEnd.TelaLista.idNotaSelecionada;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Génio Pró
- */
 public class TelaActualizar extends javax.swing.JFrame {
 
-    
     public TelaActualizar() {
         initComponents();
         ImageIcon icon = new ImageIcon("src/images/icon.png");
         setIconImage(icon.getImage());
-     //   this.buscarDadosNotaSelecionada();
+        this.buscarDadosNotaSelecionada();
     }
 
     void limparCampos() {
         tituloTxt2.setText("");
         descTxt2.setText("");
     }
-    
-    void buscarDadosNotaSelecionada(){
+
+    void buscarDadosNotaSelecionada() {
         int idNota = idNotaSelecionada;
+        System.out.println(idNota);
         NotaDao notaDao = new NotaDao();
         Nota nota = new Nota();
         nota = notaDao.listarPorId(idNota);
-        
         tituloTxt2.setText(nota.getTitulo());
         descTxt2.setText(nota.getDesc());
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -164,7 +159,7 @@ public class TelaActualizar extends javax.swing.JFrame {
         nota.setId(idNota);
         nota.setTitulo(titulo);
         nota.setDesc(desc);
-        
+
         NotaDao notaDao = new NotaDao();
         executado = notaDao.actualizar(nota);
 
