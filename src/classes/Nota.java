@@ -29,4 +29,10 @@ public class Nota {
     public void setDesc(String desc) {
         this.desc = desc;
     }
+    
+    public String toString(){
+        return this.getTitulo()
+                  //  + " ... Desc: " + this.getDesc()
+                    + " <---> Data: 20-12-2024";
+    }
 }
