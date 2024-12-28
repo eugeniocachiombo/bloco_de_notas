@@ -36,7 +36,7 @@ public class NotaDao implements NotaInterface {
     @Override
     public boolean actualizar(Nota nota) {
         try {
-            String sql = "UPDATE nota SET titulo=?, descricao=? WHERE id=?";
+            String sql = "UPDATE nota SET titulo=?, descricao=?, actualizacao=CURRENT_TIMESTAMP WHERE id=?";
             PreparedStatement stmt = con.prepareStatement(sql);
             stmt.setString(1, nota.getTitulo());
             stmt.setString(2, nota.getDesc());
@@ -76,6 +76,8 @@ public class NotaDao implements NotaInterface {
                 nota.setId(rs.getInt("id"));
                 nota.setTitulo(rs.getString("titulo"));
                 nota.setDesc(rs.getString("descricao"));
+                nota.setCriacao(rs.getString("criacao"));
+                nota.setActualizacao(rs.getString("actualizacao"));
                 listaNotas.add(nota);
             }
             return listaNotas;
