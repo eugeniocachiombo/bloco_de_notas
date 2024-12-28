@@ -51,6 +51,6 @@ public class Nota {
     public String toString(){
         return " º " + this.getTitulo()
                   //  + " ... Desc: " + this.getDesc()
-                    + " <---> " + this.getActualizacao();
+                    + " ---- " + this.getActualizacao();
     }
 }

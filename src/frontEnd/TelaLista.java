@@ -3,6 +3,7 @@ package frontEnd;
 
 import classes.Nota;
 import dao.NotaDao;
+import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
@@ -79,12 +80,20 @@ public class TelaLista extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
         });
-        jList1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jList1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jList1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+        jList1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jList1.setFocusable(false);
         jList1.setMinimumSize(new java.awt.Dimension(45, 0));
+        jList1.setSelectionBackground(new java.awt.Color(0, 102, 204));
         jList1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jList1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jList1MouseEntered(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jList1MouseReleased(evt);
             }
         });
         jScrollPane1.setViewportView(jList1);
@@ -126,6 +135,14 @@ public class TelaLista extends javax.swing.JFrame {
         tAdd.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jToggleButton2ActionPerformed
+
+    private void jList1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MouseEntered
+       
+    }//GEN-LAST:event_jList1MouseEntered
+
+    private void jList1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MouseReleased
+   
+    }//GEN-LAST:event_jList1MouseReleased
 
     /**
      * @param args the command line arguments

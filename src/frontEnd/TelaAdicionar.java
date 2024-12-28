@@ -61,7 +61,7 @@ public class TelaAdicionar extends javax.swing.JFrame {
         jLabel5.setText("Bloco de notas");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, -1, -1));
 
-        tituloTxt.setBackground(new java.awt.Color(38, 92, 74));
+        tituloTxt.setBackground(new java.awt.Color(51, 51, 51));
         tituloTxt.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         tituloTxt.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(tituloTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 327, 40));
@@ -71,7 +71,7 @@ public class TelaAdicionar extends javax.swing.JFrame {
         jLabel2.setText("Descrição:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
 
-        descTxt.setBackground(new java.awt.Color(38, 92, 74));
+        descTxt.setBackground(new java.awt.Color(51, 51, 51));
         descTxt.setColumns(20);
         descTxt.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
         descTxt.setForeground(new java.awt.Color(255, 255, 255));
@@ -87,7 +87,7 @@ public class TelaAdicionar extends javax.swing.JFrame {
         jLabel3.setText("Título: ");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
 
-        jToggleButton1.setBackground(new java.awt.Color(38, 92, 74));
+        jToggleButton1.setBackground(new java.awt.Color(51, 51, 51));
         jToggleButton1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jToggleButton1.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButton1.setText("Guardar Nota");
