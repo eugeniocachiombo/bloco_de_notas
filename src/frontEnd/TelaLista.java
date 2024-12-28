@@ -3,12 +3,15 @@ package frontEnd;
 import classes.Nota;
 import dao.NotaDao;
 import java.util.ArrayList;
+import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 
 public class TelaLista extends javax.swing.JFrame  {
 
     public TelaLista() {
         initComponents();
+        ImageIcon icon = new ImageIcon("src/images/icon.png");
+        setIconImage(icon.getImage());
         this.listarDados();
     }
 

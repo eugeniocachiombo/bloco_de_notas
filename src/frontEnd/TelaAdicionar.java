@@ -2,7 +2,12 @@ package frontEnd;
 
 import classes.Nota;
 import dao.NotaDao;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.net.URL;
 import java.util.ArrayList;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
@@ -12,6 +17,8 @@ public class TelaAdicionar extends javax.swing.JFrame {
 
     public TelaAdicionar() {
         initComponents();
+        ImageIcon icon = new ImageIcon("src/images/icon.png");
+        setIconImage(icon.getImage());
     }
 
     void limparCampos() {
