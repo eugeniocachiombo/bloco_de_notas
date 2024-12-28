@@ -66,4 +66,23 @@ public class NotaDao implements NotaInterface {
             return null;
         }
     }
+
+    public Nota listarPorId(int id) {
+        try {
+            String sql = "select * from nota where id = ?";
+            PreparedStatement stmt = con.prepareStatement(sql);
+            stmt.setInt(1, id);
+            ResultSet rs = stmt.executeQuery();
+            rs.first();
+
+            Nota nota = new Nota();
+            nota.setId(rs.getInt("id"));
+            nota.setTitulo(rs.getString("titulo"));
+            nota.setDesc(rs.getString("descricao"));
+            return nota;
+        } catch (Exception e) {
+            System.out.println("Erro: " + e.getMessage());
+            return null;
+        }
+    }
 }

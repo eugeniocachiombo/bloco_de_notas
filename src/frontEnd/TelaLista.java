@@ -10,13 +10,15 @@ import javax.swing.JOptionPane;
 
 
 public class TelaLista extends javax.swing.JFrame {
-
+    
+    public static int idNotaSelecionada;
     
     public TelaLista() {
         initComponents();
         this.listarDados();
         ImageIcon icon = new ImageIcon("src/images/icon.png");
         setIconImage(icon.getImage());
+        idNotaSelecionada = 0; // Variavel estatica
     }
     
     void listarDados() {
@@ -112,7 +114,11 @@ public class TelaLista extends javax.swing.JFrame {
         int indice = jList1.getSelectedIndex();
         Object modelo = modelos.get(indice);
         Nota nota = (Nota) modelo;
-        JOptionPane.showMessageDialog(null, nota.getId());
+        idNotaSelecionada = nota.getId(); // Variavel estatica
+        
+        TelaActualizar telaActualizar = new TelaActualizar();
+        telaActualizar.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jList1MouseClicked
 
     private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
