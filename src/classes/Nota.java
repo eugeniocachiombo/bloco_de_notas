@@ -31,7 +31,7 @@ public class Nota {
     }
     
     public String toString(){
-        return this.getTitulo()
+        return " º " + this.getTitulo()
                   //  + " ... Desc: " + this.getDesc()
                     + " <---> Data: 20-12-2024";
     }
