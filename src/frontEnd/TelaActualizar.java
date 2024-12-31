@@ -51,6 +51,7 @@ public class TelaActualizar extends javax.swing.JFrame {
         fundoAdicionar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Actualizar Nota");
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(17, 13, 13));
