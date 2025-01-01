@@ -33,6 +33,10 @@ public class TelaLista extends javax.swing.JFrame {
         for (Nota nota : listaNotas) {
             model.addElement(nota);
         }
+        
+        if(listaNotas.isEmpty()){
+           model.addElement("Nenhuma anotação foi feita!"); 
+        }
         jList1.setModel(model);
     }
 
@@ -82,7 +86,6 @@ public class TelaLista extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
         });
-        jList1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
         jList1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jList1.setFocusable(false);
         jList1.setMinimumSize(new java.awt.Dimension(45, 0));
