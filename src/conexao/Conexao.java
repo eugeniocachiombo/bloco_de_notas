@@ -9,7 +9,7 @@ public class Conexao {
 
     public Connection getConexao() {
         try {
-            String host = "jdbc:sqlite:src/conexao/conexao.db";
+            String host = "jdbc:sqlite:C:/bloco_de_notas.db";
             Connection con = DriverManager.getConnection(host);
             boolean tbl = this.criarTabela(con);
              if(tbl){
@@ -19,7 +19,6 @@ public class Conexao {
                 System.out.println("Erro ao criar tabela");
                 return null;
              }
-            
         } catch (Exception e) {
             System.out.println("Erro de conexão: " + e.getMessage());
             return null;
