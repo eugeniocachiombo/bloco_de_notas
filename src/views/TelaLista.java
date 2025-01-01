@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.UIManager;
 
 
 public class TelaLista extends javax.swing.JFrame {
@@ -176,7 +177,16 @@ public class TelaLista extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+                this.abrirDesigner();
                 new TelaLista().setVisible(true);
+            }
+            
+            public void abrirDesigner() {
+                try {
+                    UIManager.setLookAndFeel("com.jtattoo.plaf.acryl.AcrylLookAndFeel");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
     }

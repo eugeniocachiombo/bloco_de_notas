@@ -66,7 +66,7 @@ public class NotaDao implements NotaInterface {
     @Override
     public ArrayList<Nota> listar() {
         try {
-            String sql = "select * from nota";
+            String sql = "select * from nota order by id desc";
             PreparedStatement stmt = con.prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();
             ArrayList<Nota> listaNotas = new ArrayList<>();
