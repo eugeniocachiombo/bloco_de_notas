@@ -9,7 +9,7 @@ public class Conexao {
 
     public Connection getConexao() {
         try {
-            String host = "jdbc:sqlite:C:/bloco_de_notas.db";
+            String host = "jdbc:sqlite:" + getClass().getResource("/conexao/conexao.db");
             Connection con = DriverManager.getConnection(host);
             boolean tbl = this.criarTabela(con);
              if(tbl){
