@@ -1,5 +1,5 @@
 
-package frontEnd;
+package views;
 
 import classes.Nota;
 import dao.NotaDao;
@@ -17,7 +17,7 @@ public class TelaLista extends javax.swing.JFrame {
     public TelaLista() {
         initComponents();
         this.listarDados();
-        ImageIcon icon = new ImageIcon("src/images/icon.png");
+        ImageIcon icon = new ImageIcon(getClass().getResource("/images/icon.png"));
         setIconImage(icon.getImage());
         idNotaSelecionada = 0; // Variavel estatica
     }

@@ -1,37 +1,22 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package frontEnd;
+package views;
 
 import classes.Nota;
 import dao.NotaDao;
-import static frontEnd.TelaLista.idNotaSelecionada;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.UIManager;
 
-public class TelaActualizar extends javax.swing.JFrame {
+public class TelaAdicionar extends javax.swing.JFrame {
 
-    public TelaActualizar() {
+    public TelaAdicionar() {
         initComponents();
-        ImageIcon icon = new ImageIcon("src/images/icon.png");
+        ImageIcon icon = new ImageIcon(getClass().getResource("/images/icon.png"));
         setIconImage(icon.getImage());
-        this.buscarDadosNotaSelecionada();
     }
 
     void limparCampos() {
-        tituloTxt2.setText("");
-        descTxt2.setText("");
-    }
-
-    void buscarDadosNotaSelecionada() {
-        int idNota = idNotaSelecionada;
-        NotaDao notaDao = new NotaDao();
-        Nota nota = new Nota();
-        nota = notaDao.listarPorId(idNota);
-        tituloTxt2.setText(nota.getTitulo());
-        descTxt2.setText(nota.getDesc());
+        tituloTxt.setText("");
+        descTxt.setText("");
     }
 
     @SuppressWarnings("unchecked")
@@ -39,19 +24,20 @@ public class TelaActualizar extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        tituloTxt2 = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        tituloTxt = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        descTxt2 = new javax.swing.JTextArea();
+        descTxt = new javax.swing.JTextArea();
         jLabel3 = new javax.swing.JLabel();
         jToggleButton1 = new javax.swing.JToggleButton();
         jToggleButton2 = new javax.swing.JToggleButton();
-        jToggleButton3 = new javax.swing.JToggleButton();
         fundoAdicionar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Actualizar Nota");
+        setTitle("Adicionar Nota");
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(17, 13, 13));
@@ -61,29 +47,37 @@ public class TelaActualizar extends javax.swing.JFrame {
         jPanel1.setRequestFocusEnabled(false);
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("Black Ryder Demo", 1, 24)); // NOI18N
+        jLabel1.setText(" de notas");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, -1, -1));
+
         jLabel4.setFont(new java.awt.Font("Black Ryder Demo", 1, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Actualizar nota");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        jLabel4.setText("Bloco de notas");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, -1, -1));
 
-        tituloTxt2.setBackground(new java.awt.Color(51, 51, 51));
-        tituloTxt2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        tituloTxt2.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(tituloTxt2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 327, 40));
+        jLabel5.setFont(new java.awt.Font("Black Ryder Demo", 1, 24)); // NOI18N
+        jLabel5.setText("Bloco de notas");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, -1, -1));
+
+        tituloTxt.setBackground(new java.awt.Color(51, 51, 51));
+        tituloTxt.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        tituloTxt.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(tituloTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 327, 40));
 
         jLabel2.setFont(new java.awt.Font("Black Ryder Demo", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Descrição:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
 
-        descTxt2.setBackground(new java.awt.Color(51, 51, 51));
-        descTxt2.setColumns(20);
-        descTxt2.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
-        descTxt2.setForeground(new java.awt.Color(255, 255, 255));
-        descTxt2.setLineWrap(true);
-        descTxt2.setRows(5);
-        descTxt2.setWrapStyleWord(true);
-        jScrollPane1.setViewportView(descTxt2);
+        descTxt.setBackground(new java.awt.Color(51, 51, 51));
+        descTxt.setColumns(20);
+        descTxt.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        descTxt.setForeground(new java.awt.Color(255, 255, 255));
+        descTxt.setLineWrap(true);
+        descTxt.setRows(5);
+        descTxt.setWrapStyleWord(true);
+        jScrollPane1.setViewportView(descTxt);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 220, 327, 215));
 
@@ -95,7 +89,7 @@ public class TelaActualizar extends javax.swing.JFrame {
         jToggleButton1.setBackground(new java.awt.Color(51, 51, 51));
         jToggleButton1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jToggleButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton1.setText("Actualizar Nota");
+        jToggleButton1.setText("Guardar Nota");
         jToggleButton1.setAlignmentX(10.0F);
         jToggleButton1.setAlignmentY(50.0F);
         jToggleButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -115,18 +109,7 @@ public class TelaActualizar extends javax.swing.JFrame {
                 jToggleButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jToggleButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 20, 90, -1));
-
-        jToggleButton3.setBackground(new java.awt.Color(51, 51, 51));
-        jToggleButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton3.setText("Eliminar");
-        jToggleButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton3ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jToggleButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 80, 90, -1));
+        jPanel1.add(jToggleButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 80, 90, -1));
 
         fundoAdicionar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/1.jpg"))); // NOI18N
         jPanel1.add(fundoAdicionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -150,27 +133,22 @@ public class TelaActualizar extends javax.swing.JFrame {
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
 
-        String titulo = tituloTxt2.getText();
-        String desc = descTxt2.getText();
+        String titulo = tituloTxt.getText();
+        String desc = descTxt.getText();
         boolean executado;
-        int idNota = idNotaSelecionada; // Variavel estatica
 
         Nota nota = new Nota();
-        nota.setId(idNota);
         nota.setTitulo(titulo);
         nota.setDesc(desc);
-
+        
         NotaDao notaDao = new NotaDao();
-        executado = notaDao.actualizar(nota);
+        executado = notaDao.adicionar(nota);
 
         if (executado) {
-            JOptionPane.showMessageDialog(null, "Nota Actualizada");
+            JOptionPane.showMessageDialog(null, "Nota adicionada");
             this.limparCampos();
-            TelaLista tLista = new TelaLista();
-            tLista.setVisible(true);
-            this.dispose();
         } else {
-            JOptionPane.showMessageDialog(null, "Erro ao actualizar");
+            JOptionPane.showMessageDialog(null, "Erro ao adicionar");
         }
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
@@ -180,27 +158,6 @@ public class TelaActualizar extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jToggleButton2ActionPerformed
 
-    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
-      
-        boolean executado;
-        int idNota = idNotaSelecionada; // Variavel estatica
-        NotaDao notaDao = new NotaDao();
-        executado = notaDao.eliminar(idNota);
-
-        if (executado) {
-            JOptionPane.showMessageDialog(null, "Nota Eliminada");
-            this.limparCampos();
-            TelaLista tLista = new TelaLista();
-            tLista.setVisible(true);
-            this.dispose();
-        } else {
-            JOptionPane.showMessageDialog(null, "Erro ao eliminar");
-        }
-    }//GEN-LAST:event_jToggleButton3ActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -215,35 +172,45 @@ public class TelaActualizar extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaActualizar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaAdicionar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaActualizar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaAdicionar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaActualizar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaAdicionar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaActualizar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaAdicionar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaActualizar().setVisible(true);
+                this.abrirDesigner();
+                new TelaAdicionar().setVisible(true);
+            }
+
+            public void abrirDesigner() {
+                try {
+                    UIManager.setLookAndFeel("com.jtattoo.plaf.acryl.AcrylLookAndFeel");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextArea descTxt2;
+    private javax.swing.JTextArea descTxt;
     private javax.swing.JLabel fundoAdicionar;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JToggleButton jToggleButton3;
-    private javax.swing.JTextField tituloTxt2;
+    private javax.swing.JTextField tituloTxt;
     // End of variables declaration//GEN-END:variables
 }
