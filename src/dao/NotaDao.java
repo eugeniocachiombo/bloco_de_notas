@@ -106,4 +106,29 @@ public class NotaDao implements NotaInterface {
             return null;
         }
     }
+    
+    public ArrayList<Nota> consultar(String consulta) {
+        try {
+            String sql = "select * from nota where titulo like ? or descricao like ?";
+            PreparedStatement stmt = con.prepareStatement(sql);
+            stmt.setString(1, "%" + consulta + "%");
+            stmt.setString(2, "%" + consulta + "%");
+            ResultSet rs = stmt.executeQuery();
+           ArrayList<Nota> listaNotas = new ArrayList<>();
+
+            while (rs.next()) {
+                Nota nota = new Nota();
+                nota.setId(rs.getInt("id"));
+                nota.setTitulo(rs.getString("titulo"));
+                nota.setDesc(rs.getString("descricao"));
+                nota.setCriacao(rs.getString("criacao"));
+                nota.setActualizacao(rs.getString("actualizacao"));
+                listaNotas.add(nota);
+            }
+            return listaNotas;
+        } catch (Exception e) {
+            System.out.println("Erro: " + e.getMessage());
+            return null;
+        }
+    }
 }
