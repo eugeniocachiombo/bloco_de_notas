@@ -106,15 +106,15 @@ public class NotaDao implements NotaInterface {
             return null;
         }
     }
-    
+
     public ArrayList<Nota> consultar(String consulta) {
         try {
-            String sql = "select * from nota where titulo like ? or descricao like ?";
+            String sql = "select * from nota where titulo like ? or descricao like ? order by id desc";
             PreparedStatement stmt = con.prepareStatement(sql);
             stmt.setString(1, "%" + consulta + "%");
             stmt.setString(2, "%" + consulta + "%");
             ResultSet rs = stmt.executeQuery();
-           ArrayList<Nota> listaNotas = new ArrayList<>();
+            ArrayList<Nota> listaNotas = new ArrayList<>();
 
             while (rs.next()) {
                 Nota nota = new Nota();

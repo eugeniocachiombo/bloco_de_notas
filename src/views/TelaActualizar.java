@@ -161,7 +161,8 @@ public class TelaActualizar extends javax.swing.JFrame {
         nota.setDesc(desc);
 
         NotaDao notaDao = new NotaDao();
-        executado = notaDao.actualizar(nota);
+        executado = notaDao.adicionar(nota);
+        notaDao.eliminar(nota.getId());
 
         if (executado) {
             JOptionPane.showMessageDialog(null, "Nota Actualizada");
